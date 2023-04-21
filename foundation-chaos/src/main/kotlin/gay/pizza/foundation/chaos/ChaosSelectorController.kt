@@ -15,8 +15,10 @@ class ChaosSelectorController(val controller: ChaosController, val plugin: Plugi
 
   fun select() {
     controller.deactivateAll()
-    val module = controller.allModules.random()
-    controller.activate(module)
+    val module = controller.allowedModules.randomOrNull()
+    if (module != null) {
+      controller.activate(module)
+    }
   }
 
   fun cancel() {

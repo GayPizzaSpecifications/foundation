@@ -1,6 +1,6 @@
 package gay.pizza.foundation.chaos.modules
 
-import gay.pizza.foundation.shared.spawn
+import gay.pizza.foundation.common.spawn
 import org.bukkit.entity.TNTPrimed
 import org.bukkit.plugin.Plugin
 

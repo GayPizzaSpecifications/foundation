@@ -1,7 +1,7 @@
 package gay.pizza.foundation.core.features.stats
 
-import gay.pizza.foundation.shared.SortOrder
-import gay.pizza.foundation.shared.allPlayerStatisticsOf
+import gay.pizza.foundation.common.SortOrder
+import gay.pizza.foundation.common.allPlayerStatisticsOf
 import org.bukkit.Statistic
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor

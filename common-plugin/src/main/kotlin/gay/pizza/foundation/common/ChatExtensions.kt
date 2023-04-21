@@ -1,4 +1,4 @@
-package gay.pizza.foundation.shared
+package gay.pizza.foundation.common
 
 import org.bukkit.entity.Player
 

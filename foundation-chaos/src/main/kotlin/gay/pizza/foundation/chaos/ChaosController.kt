@@ -18,7 +18,8 @@ class ChaosController(val plugin: Plugin, val config: ChaosConfig) : Listener {
   val selectorController = ChaosSelectorController(this, plugin)
 
   val allModules = ChaosModules.all(plugin)
-  private var allowedModules: List<ChaosModule> = emptyList()
+  var allowedModules: List<ChaosModule> = emptyList()
+
   private var activeModules = mutableSetOf<ChaosModule>()
 
   var bossBar: BossBar? = null

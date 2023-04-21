@@ -1,6 +1,6 @@
 package gay.pizza.foundation.core.features.player
 
-import gay.pizza.foundation.shared.spawn
+import gay.pizza.foundation.common.spawn
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

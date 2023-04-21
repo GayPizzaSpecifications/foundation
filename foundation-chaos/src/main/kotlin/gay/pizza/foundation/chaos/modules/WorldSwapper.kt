@@ -4,8 +4,6 @@ import gay.pizza.foundation.chaos.randomPlayer
 import gay.pizza.foundation.common.without
 import org.bukkit.Chunk
 import org.bukkit.ChunkSnapshot
-import org.bukkit.Location
-import org.bukkit.Material
 import org.bukkit.block.Block
 import org.bukkit.block.data.BlockData
 import org.bukkit.plugin.Plugin

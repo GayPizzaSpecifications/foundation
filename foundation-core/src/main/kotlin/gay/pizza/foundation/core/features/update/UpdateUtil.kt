@@ -1,7 +1,5 @@
 package gay.pizza.foundation.core.features.update
 
-import kotlinx.serialization.DeserializationStrategy
-import kotlinx.serialization.json.Json
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest

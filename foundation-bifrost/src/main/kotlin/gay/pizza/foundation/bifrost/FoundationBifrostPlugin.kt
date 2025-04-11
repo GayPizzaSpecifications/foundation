@@ -3,17 +3,18 @@ package gay.pizza.foundation.bifrost
 import gay.pizza.foundation.bifrost.model.BifrostConfig
 import gay.pizza.foundation.common.BaseFoundationPlugin
 import gay.pizza.foundation.common.FoundationCoreLoader
-import gay.pizza.foundation.shared.*
+import gay.pizza.foundation.shared.AdvancementTitleCache
+import gay.pizza.foundation.shared.PluginMainClass
 import io.papermc.paper.event.player.AsyncChatEvent
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
-import net.dv8tion.jda.api.MessageBuilder
-import net.dv8tion.jda.api.entities.Message
-import net.dv8tion.jda.api.entities.TextChannel
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel
 import net.dv8tion.jda.api.events.GenericEvent
-import net.dv8tion.jda.api.events.ReadyEvent
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
+import net.dv8tion.jda.api.events.session.ReadyEvent
+import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder
+import net.dv8tion.jda.api.utils.messages.MessageCreateData
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.event.EventHandler
@@ -98,12 +99,12 @@ class FoundationBifrostPlugin : BaseFoundationPlugin(), DiscordEventListener, Bu
     return channel
   }
 
-  private fun message(f: MessageBuilder.() -> Unit) = MessageBuilder().apply(f).build()
-  private fun MessageBuilder.embed(f: EmbedBuilder.() -> Unit) {
+  private fun message(f: MessageCreateBuilder.() -> Unit) = MessageCreateBuilder().apply(f).build()
+  private fun MessageCreateBuilder.embed(f: EmbedBuilder.() -> Unit) {
     setEmbeds(EmbedBuilder().apply(f).build())
   }
 
-  private fun sendChannelMessage(message: Message, debug: () -> String) {
+  private fun sendChannelMessage(message: MessageCreateData, debug: () -> String) {
     val channel = getTextChannel()
     channel?.sendMessage(message)?.queue()
 

@@ -1,6 +1,7 @@
 package gay.pizza.foundation.heimdall.tool.commands
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.Context
 import com.github.ajalt.clikt.core.requireObject
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.flag
@@ -31,7 +32,7 @@ import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ScheduledThreadPoolExecutor
 
-class BlockChangeTimelapseCommand : CliktCommand("Block Change Timelapse", name = "block-change-timelapse") {
+class BlockChangeTimelapseCommand : CliktCommand("block-change-timelapse") {
   private val db by requireObject<Database>()
   private val timelapseIntervalLimit by option("--timelapse-limit", help = "Timelapse Limit Intervals").int()
   private val timelapseMode by option("--timelapse", help = "Timelapse Mode").enum<TimelapseMode> { it.id }.required()

@@ -19,7 +19,7 @@ import kotlinx.serialization.json.decodeFromStream
 import kotlinx.serialization.json.encodeToStream
 import org.jetbrains.exposed.sql.Database
 
-class ChunkExportLoaderCommand : CliktCommand("Chunk Export Loader", name = "chunk-export-loader") {
+class ChunkExportLoaderCommand : CliktCommand(name = "chunk-export-loader") {
   private val db by requireObject<Database>()
 
   private val exportDirectoryPath by argument("export-directory-path").path()

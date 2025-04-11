@@ -1,4 +1,3 @@
-@file:Suppress("UnstableApiUsage")
 rootProject.name = "foundation"
 
 pluginManagement {
@@ -40,8 +39,8 @@ include(
 dependencyResolutionManagement {
   versionCatalogs {
     create("libs") {
-      version("versions-plugin", "0.45.0")
-      version("concrete", "0.16.0")
+      version("versions-plugin", "0.52.0")
+      version("concrete", "0.17.0")
 
       plugin("versions", "com.github.ben-manes.versions").versionRef("versions-plugin")
 
@@ -60,19 +59,19 @@ dependencyResolutionManagement {
         }
       }
 
-      version("clikt", "3.5.1")
+      version("clikt", "5.0.3")
       version("xodus", "2.0.1")
-      version("quartz", "2.3.2")
-      version("guava", "31.1-jre")
-      version("koin", "3.3.2")
-      version("aws-sdk-s3", "2.19.31")
-      version("slf4j-simple", "2.0.6")
-      version("discord-jda", "5.0.0-alpha.2")
-      version("kaml", "0.51.0")
-      version("kotlin-serialization-json", "1.3.1")
-      version("postgresql", "42.5.3")
-      version("exposed", "0.41.1")
-      version("hikaricp", "5.0.1")
+      version("quartz", "2.5.0")
+      version("guava", "33.4.7-jre")
+      version("koin", "4.0.4")
+      version("aws-sdk-s3", "2.31.19")
+      version("slf4j-simple", "2.0.17")
+      version("discord-jda", "5.3.2")
+      version("kaml", "0.76.0")
+      version("kotlin-serialization-json", "1.8.1")
+      version("postgresql", "42.7.5")
+      version("exposed", "0.61.0")
+      version("hikaricp", "6.3.0")
       version("libtailscale", "0.1.6-SNAPSHOT")
 
       library("clikt", "com.github.ajalt.clikt", "clikt").versionRef("clikt")

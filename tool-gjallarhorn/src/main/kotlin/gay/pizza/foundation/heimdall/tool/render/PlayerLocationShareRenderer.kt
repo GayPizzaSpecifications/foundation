@@ -4,8 +4,11 @@ import gay.pizza.foundation.heimdall.table.PlayerPositionTable
 import gay.pizza.foundation.heimdall.tool.state.*
 import gay.pizza.foundation.heimdall.tool.util.BlockColorKey
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.greater
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.lessEq
 import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.awt.Color
 import java.awt.image.BufferedImage
@@ -25,7 +28,7 @@ class PlayerLocationShareRenderer(
     val playerSparseMap = BlockCoordinateSparseMap<MutableList<UUID>>()
     val allPlayerIds = HashSet<UUID>()
     transaction(db) {
-      PlayerPositionTable.select {
+      PlayerPositionTable.selectAll().where {
         (PlayerPositionTable.time greater start) and
             (PlayerPositionTable.time lessEq end)
       }.forEach {

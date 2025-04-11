@@ -1,6 +1,6 @@
 plugins {
   id("gay.pizza.foundation.concrete-base")
-  id("com.github.johnrengelman.shadow")
+  id("com.gradleup.shadow")
 }
 
 dependencies {
@@ -24,6 +24,6 @@ concreteItem {
   type.set("tool")
 
   fileInclusion {
-    tasks.shadowJar.get().outputs.files.associateWith { "tool-jar" }
+    tasks.getByName("shadowJar").outputs.files.associateWith { "tool-jar" }
   }
 }

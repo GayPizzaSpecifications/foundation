@@ -3,8 +3,9 @@ package gay.pizza.foundation.core.features.update
 import gay.pizza.foundation.concrete.ExtensibleManifest
 import kotlinx.serialization.json.Json
 import org.bukkit.Server
-import java.net.URL
+import java.net.URI
 
+@Suppress("UnstableApiUsage")
 class UpdateResolver {
   fun fetchCurrentManifest(): ExtensibleManifest {
     val jsonContentString = latestManifestUrl.openStream().readAllBytes().decodeToString()
@@ -39,7 +40,7 @@ class UpdateResolver {
       if (entry.value == null) {
         true
       } else {
-        val installed = entry.value!!.description.version
+        val installed = entry.value!!.pluginMeta.version
         if (installed == "DEV") {
           false
         } else {
@@ -51,7 +52,7 @@ class UpdateResolver {
   }
 
   companion object {
-    internal val latestManifestUrl = URL("https://artifacts.gay.pizza/foundation/manifest.json")
+    internal val latestManifestUrl = URI("https://artifacts.gay.pizza/foundation/manifest.json").toURL()
     private val jsonRelaxed = Json { ignoreUnknownKeys = true }
 
     private val pluginToManifestNameMappings = mapOf(

@@ -1,6 +1,7 @@
 package gay.pizza.foundation.shared
 
 import com.charleskorn.kaml.Yaml
+import com.charleskorn.kaml.decodeFromStream
 import kotlinx.serialization.DeserializationStrategy
 import org.slf4j.Logger
 import java.nio.file.Path

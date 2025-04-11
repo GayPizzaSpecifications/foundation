@@ -15,7 +15,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import java.time.Instant
 import java.util.*
 
-class PlayerPositionExport : CliktCommand(name = "export-player-positions", help = "Export Player Positions") {
+class PlayerPositionExport : CliktCommand(name = "export-player-positions") {
   private val db by requireObject<Database>()
 
   private val playerIdString by option("--player", help = "Player ID")

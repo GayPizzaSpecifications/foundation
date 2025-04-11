@@ -12,7 +12,7 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
-class PlayerSessionExport : CliktCommand(name = "export-player-sessions", help = "Export Player Sessions") {
+class PlayerSessionExport : CliktCommand(name = "export-player-sessions") {
   private val db by requireObject<Database>()
 
   private val playerIdString by option("--player-id", help = "Player ID")

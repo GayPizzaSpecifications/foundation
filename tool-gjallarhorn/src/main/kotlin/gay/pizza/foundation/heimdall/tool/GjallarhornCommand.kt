@@ -9,7 +9,7 @@ import com.zaxxer.hikari.HikariDataSource
 import org.jetbrains.exposed.sql.Database
 import java.time.Duration
 
-class GjallarhornCommand : CliktCommand(invokeWithoutSubcommand = true) {
+class GjallarhornCommand : CliktCommand() {
   private val jdbcConnectionUrl by option("-c", "--connection-url", help = "JDBC Connection URL")
     .default("jdbc:postgresql://localhost/heimdall")
 

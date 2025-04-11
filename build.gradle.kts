@@ -29,17 +29,17 @@ subprojects {
   group = "gay.pizza.foundation"
 
   tasks.withType<KotlinCompile> {
-    kotlinOptions {
-      freeCompilerArgs += "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+    compilerOptions {
+      freeCompilerArgs.add("-opt-in=kotlinx.serialization.ExperimentalSerializationApi")
     }
   }
 }
 
-val paperServerVersion: String = project.properties["paperServerVersion"]?.toString() ?: "1.18"
+val paperServerVersion: String = project.properties["paperServerVersion"]?.toString() ?: "1.21"
 
 concreteRoot {
   minecraftServerPath.set("server")
   paperServerVersionGroup.set(paperServerVersion)
-  paperApiVersion.set("1.18.2-R0.1-SNAPSHOT")
+  paperApiVersion.set("1.21.4-R0.1-SNAPSHOT")
   acceptServerEula.set(true)
 }

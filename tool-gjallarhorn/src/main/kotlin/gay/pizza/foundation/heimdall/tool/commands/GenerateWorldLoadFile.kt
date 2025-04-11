@@ -19,7 +19,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import kotlin.io.path.deleteIfExists
 import kotlin.io.path.outputStream
 
-class GenerateWorldLoadFile : CliktCommand(name = "generate-world-load", help = "Generate World Load File") {
+class GenerateWorldLoadFile : CliktCommand(name = "generate-world-load") {
   private val db by requireObject<Database>()
 
   val path by argument("load-format-file").path()
